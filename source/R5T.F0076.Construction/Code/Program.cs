@@ -7,7 +7,7 @@ namespace R5T.F0076.Construction
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Try.Instance.PublishProjectWithCOMReference();
         }
     }
 }

@@ -13,7 +13,10 @@ namespace R5T.F0076
 			string outputDirectoryPath,
 			string configurationName)
         {
-			var msBuildArguments = $"-target:Publish -p:OutDir=\"{outputDirectoryPath}\" -p:Configuration={configurationName} \"{projectFilePath}\"";
+			// The output directory path must *not* be directory indicated!
+			var adjustedOutputDirectoryPath = Instances.PathOperator.EnsureIsNotDirectoryIndicated(outputDirectoryPath);
+
+            var msBuildArguments = $"-target:Publish -p:OutDir=\"{adjustedOutputDirectoryPath}\" -p:Configuration={configurationName} \"{projectFilePath}\"";
 
 			MSBuildOperator.Instance.Run_Synchronous(msBuildArguments);
 		}

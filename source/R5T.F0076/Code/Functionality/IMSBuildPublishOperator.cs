@@ -28,7 +28,7 @@ namespace R5T.F0076
 			this.Publish_Synchronous(
 				projectFilePath,
 				outputDirectoryPath,
-				"Debug");
+				"Release");
         }
 
 		/// <summary>

@@ -14,7 +14,7 @@ namespace R5T.F0076
 			string configurationName)
         {
 			// The output directory path must *not* be directory indicated!
-			var adjustedOutputDirectoryPath = Instances.PathOperator.EnsureIsNotDirectoryIndicated(outputDirectoryPath);
+			var adjustedOutputDirectoryPath = Instances.PathOperator.Ensure_IsNotDirectoryIndicated(outputDirectoryPath);
 
             var msBuildArguments = $"-target:Publish -p:OutDir=\"{adjustedOutputDirectoryPath}\" -p:Configuration={configurationName} \"{projectFilePath}\"";
 
